@@ -1,0 +1,148 @@
+/* ============================================================
+   ระบบขอเปิดกลุ่มเรียนกรณีพิเศษ — Stylesheet หลัก
+   ปรับแต่งเพิ่มเติมจาก Bootstrap 5
+   ============================================================ */
+
+/* ─── โครงสร้างพื้นฐาน (Base Styles) ───────────────────────── */
+body {
+    font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* ─── การ์ดและพาเนล (Cards & Panels) ───────────────────────── */
+.card {
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.card-header {
+    border-top-left-radius: 14px !important;
+    border-top-right-radius: 14px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ─── ฟอร์มรับข้อมูล (Form Controls) ────────────────────────── */
+.form-label.required::after {
+    content: ' *';
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 0.55rem 0.85rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.18);
+}
+
+/* ─── ปุ่มกด (Buttons) ────────────────────────────────────── */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ─── กล่องคำแนะนำ (Info Box) ──────────────────────────────── */
+.info-box {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+
+/* ─── ขั้นตอนติดตามสถานะ (Timeline Tracker) ─────────────────── */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* เส้นแนวตั้งเชื่อมระหว่างขั้นตอน */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background-color: #e2e8f0;
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+/* ไอคอนทรงกลม */
+.timeline-icon {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.timeline-item.step-completed .timeline-icon {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.timeline-item.step-active .timeline-icon {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* ─── Responsive Adjustments ──────────────────────────────── */
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1.25rem;
+    }
+    .timeline {
+        padding-left: 40px;
+    }
+    .timeline-icon {
+        left: -40px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    .timeline-item::before {
+        left: -24px;
+    }
+}
